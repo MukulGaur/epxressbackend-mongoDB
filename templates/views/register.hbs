@@ -1,1 +1,66 @@
-<h1>Register</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+</head>
+<body>
+    {{>navbar}}
+    <div class="container mt-5">
+        <form action="/register" method="post">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="firstname">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="lastname">
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <input type="email" class="form-control" name="email" placeholder="Email" aria-label="Email">
+                </div>
+                <div class="col">
+                    <div class="align-middle">
+                        <div class="form-check form-check-inline align-middle">
+                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male" checked>
+                            <label class="form-check-label" for="inlineRadio1">Male</label>
+                        </div>
+                        <div class="form-check form-check-inline align-middle">
+                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female">
+                            <label class="form-check-label" for="inlineRadio2">Female</label>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Mobile" aria-label="Mobile" name="mobile">
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" placeholder="Age" aria-label="Age" name="age">
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <input type="password" class="form-control" placeholder="Password" aria-label="Password" name="password">
+                </div>
+                <div class="col">
+                    <input type="password" class="form-control" placeholder="Confirm Password" aria-label="Confirm Password" name="confirmpassword">
+                </div>
+            </div>
+
+            <div class="text-center">
+                <div class="btn-group mt-4" role="group" aria-label="Basic mixed styles example">
+                    <button type="reset" class="btn btn-warning">Reset</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    
+</body>
+</html>
