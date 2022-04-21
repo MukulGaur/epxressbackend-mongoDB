@@ -9,6 +9,7 @@ import path from 'path';
 import './db/conn.js';
 import Register from './models/registers.js';
 import {json} from 'express';
+import bcrypt from 'bcryptjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -64,6 +65,26 @@ app.post('/register', async (req, res) => {
 
     }catch(error){
         res.send(400).send(error);
+    }
+});
+
+// login check
+
+app.post("/login", async(req, res) => {
+    try{
+        const email = req.body.email;
+        const password = req.body.password;
+
+        const useremail = await Register.findOne({email:email});
+        
+        if(useremail.password === password){
+            res.status(201).render("index");
+        }else{
+            res.send("email or password doesn't match!");
+        }
+
+    }catch(error){
+        res.status(400).send("Invalid email")
     }
 });
 

@@ -7,13 +7,13 @@
     {{>navbar}}
     <div class="container w-25 mt-5 p-3 rounded shadow border">
         <h3 class="my-3 fw-bolder fst-italic text-center" >User Login</h3>
-        <form action="/" method="post">
+        <form action="/login" method="post">
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required name="email">
                 <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required name="password">
                 <label for="floatingPassword">Password</label>
             </div>
             <button class="btn btn-primary mt-3" type="submit">Login</button>
