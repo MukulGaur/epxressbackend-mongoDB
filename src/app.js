@@ -76,15 +76,17 @@ app.post("/login", async(req, res) => {
         const password = req.body.password;
 
         const useremail = await Register.findOne({email:email});
+
+        const isMatch = await bcrypt.compare(password, useremail.password);
         
-        if(useremail.password === password){
+        if(isMatch){
             res.status(201).render("index");
         }else{
             res.send("email or password doesn't match!");
         }
 
     }catch(error){
-        res.status(400).send("Invalid email")
+        res.status(400).send("email or password doesn't match!")
     }
 });
 
